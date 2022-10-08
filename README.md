@@ -1,5 +1,11 @@
 # Moveit2 Tutorial 
 
+
+## Things You Need
+
+- Ubuntu
+- NVidia graphics card? idk. (let me know if this breaks on your computer...)
+
 ## Running This Tutorial
 
 First time users?
@@ -13,7 +19,7 @@ First time users?
 >> git clone git@github.com:azalutsky/MoveIt2Docker.git
 ```
 
-- Build Docker image (This takes time, go grab a coffee/beer/...lunch)
+- Build Docker image (This takes time, 10-20 minutes (sorry...), go grab a coffee/beer/...lunch)
 ```
 >> sh ./build_docker.sh
 ```

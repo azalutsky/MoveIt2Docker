@@ -106,20 +106,21 @@ RUN mkdir -p $HOME/$ROS2_WORKSPACE/ros2_control && \
     https://github.com/ros-controls/ros2_control.git \
     $HOME/$ROS2_WORKSPACE/ros2_control
 
-RUN  mkdir -p $HOME/$ROS2_WORKSPACE/moveit2_tutorials && \
-    git clone https://github.com/ros-planning/moveit2_tutorials.git -b foxy --depth 1 $HOME/$ROS2_WORKSPACE/moveit2_tutorials && \
-    vcs import < $HOME/$ROS2_WORKSPACE/moveit2_tutorials/moveit2_tutorials.repos
-
-# Install dependencies of all packages
 RUN cd $HOME/$ROS2_WORKSPACE && \
+    mkdir -p $HOME/$ROS2_WORKSPACE/moveit2_tutorials && \
+    git clone https://github.com/ros-planning/moveit2_tutorials.git -b foxy --depth 1 $HOME/$ROS2_WORKSPACE/moveit2_tutorials && \
+    vcs import < $HOME/$ROS2_WORKSPACE/moveit2_tutorials/moveit2_tutorials.repos && \
+    apt update && \
     rosdep install -r \
+    --ignore-src \
     --rosdistro $ROS_DISTRO \
     --from-paths . -y
 
 # Build by source, override any packages in /opt/ros/, (moveit specifically as motoros requires a different version of control_msgs)
 RUN cd $HOME/$ROS2_WORKSPACE && \
     . /opt/ros/$ROS_DISTRO/setup.sh && \
-    colcon build --mixin release
+    colcon build --mixin release --allow-overriding controller_interface hardware_interface joint_state_publisher joint_state_publisher_gui
+
 
 RUN echo "source $HOME/$ROS2_WORKSPACE/install/setup.bash" >> /root/.bashrc
 RUN echo "figlet -c -f slant MOVEIT2 TUTORIAL" >> /root/.bashrc

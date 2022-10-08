@@ -12,5 +12,5 @@ docker run -it --rm \
     -v /tmp/.X11-unix/:/tmp/.X11-unix \
     -v $DENALI_WS_DIR/workspace/motoman_motomini_support:$WORK_DIR/workspace/motoman_motomini_support \
     -w $WORK_DIR \
-    ebots-ros2-arms \
+    moveit2-tutorial \
     /bin/bash -ci "source /root/.bashrc && /bin/bash"
