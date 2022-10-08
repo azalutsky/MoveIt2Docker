@@ -3,13 +3,13 @@
 
 ## Things You Need
 
-- Ubuntu
+- Ubuntu (unsure of which version is recommended)
 - NVidia graphics card? idk. (let me know if this breaks on your computer...)
+- Download docker [(More info here)](https://docs.docker.com/engine/install/ubuntu/)
 
 ## Running This Tutorial
 
 First time users?
-- Download docker [(More info here)](https://docs.docker.com/engine/install/ubuntu/)
 - Clone Moveit2 Tutorial Repository [(Github link)](https://github.com/azalutsky/MoveIt2Docker)
 ```
 >> git clone https://github.com/azalutsky/MoveIt2Docker.git
