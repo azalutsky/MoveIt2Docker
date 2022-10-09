@@ -4,7 +4,6 @@
 ## Things You Need
 
 - Ubuntu (unsure of which version is recommended)
-- NVidia graphics card? idk. (let me know if this breaks on your computer...)
 - Download docker [(More info here)](https://docs.docker.com/engine/install/ubuntu/)
 
 ## Running This Tutorial
