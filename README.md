@@ -34,17 +34,7 @@ If successful, you will see this splash screen stating `ROS2 sourced`.
 Now, visit here: [Moveit2 Tutorial](https://moveit.picknik.ai/foxy/doc/quickstart_in_rviz/quickstart_in_rviz_tutorial.html)
 Lets do the first steps together...
 ```
->> ros2 launch moveit2_tutorials move_group.launch.py
-```
-
-in another terminal, go to the repository directory and run this (as seen in helpful docker commands)
-```
-./another_terminal.sh
-```
-
-This should allow you to run the other command: 
-```
-ros2 launch moveit2_tutorials move_group_interface_tutorial.launch.py
+>> ros2 launch moveit2_tutorials demo.launch.py rviz_tutorial:=true
 ```
 
 ...and get started learning Moveit2! If you find something you did useful, add it here! 
