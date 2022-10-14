@@ -1,5 +1,6 @@
 # Moveit2 Tutorial 
 
+This is a great tutorial and starting point to learning how to use moveit2 in a <4gb image containing Docker, ROS2, Moveit2.
 
 ## Things You Need
 
