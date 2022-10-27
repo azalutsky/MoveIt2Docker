@@ -6,24 +6,24 @@ FROM ros:foxy
 
 ENV HOME=/home/blah
 ENV ROS2_WORKSPACE=workspace
-ARG ROS_DISTRO=foxy
+ARG ROS_DISTRO=galactic
 
 ## Basic Packages install
 ## For any other packages needed- please add to this apt-get installation!
 RUN apt-get update && \
-	  apt-get install -y \
-		build-essential \
-		curl \
-		gnupg \
-		lsb-release \
-		git \
+    apt-get install -y \
+    build-essential \
+    curl \
+    gnupg \
+    lsb-release \
+    git \
     apt-utils \
-		python3-dev \
-		python3-distutils \
-		python3-pip \
-		unzip \
-		sudo \
-		wget \
+    python3-dev \
+    python3-distutils \
+    python3-pip \
+    unzip \
+    sudo \
+    wget \
     software-properties-common \
     iputils-ping \
     vim \
@@ -32,21 +32,21 @@ RUN apt-get update && \
 
 RUN apt-get update  && \
     apt-get upgrade -y && \
-	  apt-get install -y \
+    apt-get install -y \
     vim \
     iputils-ping \
-	  ros-${ROS_DISTRO}-gazebo-ros-pkgs \
+    ros-${ROS_DISTRO}-gazebo-ros-pkgs \
     ros-${ROS_DISTRO}-xacro \
-	  python3-rosdep \
-	  python3-colcon-common-extensions \
+    python3-rosdep \
+    python3-colcon-common-extensions \
     python3-colcon-mixin \
     python3-vcstool
 
 #Update ROS2
 RUN apt update && \
     rosdep init && \
-  	rosdep update --rosdistro=$ROS_DISTRO && \
-    apt dist-upgrade \
+    rosdep update --rosdistro=$ROS_DISTRO && \
+    apt dist-upgrade
 
 RUN mkdir -p $HOME/$ROS2_WORKSPACE
 
