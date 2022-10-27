@@ -6,7 +6,7 @@ FROM ros:foxy
 
 ENV HOME=/home/blah
 ENV ROS2_WORKSPACE=workspace
-ARG ROS_DISTRO=galactic
+ARG ROS_DISTRO=foxy
 
 ## Basic Packages install
 ## For any other packages needed- please add to this apt-get installation!
