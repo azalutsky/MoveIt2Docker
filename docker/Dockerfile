@@ -43,9 +43,7 @@ RUN apt-get update  && \
     python3-vcstool
 
 #Update ROS2
-RUN apt update && \
-    rosdep init && \
-    rosdep update --rosdistro=$ROS_DISTRO && \
+RUN rosdep update --rosdistro=$ROS_DISTRO && \
     apt dist-upgrade
 
 RUN mkdir -p $HOME/$ROS2_WORKSPACE
